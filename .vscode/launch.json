@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch NumToHan",
+            "request": "launch",
+            "mainClass": "Java_codes.Code_0303.src.NumToHan",
+            "projectName": "study_notes_833db43f"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "Java_codes.Code_0303.src.App",
+            "projectName": "study_notes_833db43f"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
