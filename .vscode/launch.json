@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch J_0303",
+            "request": "launch",
+            "mainClass": "Object_oriented.Java.J_0303",
+            "projectName": "study_notes_833db43f"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
