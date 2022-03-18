@@ -1,0 +1,131 @@
+@startuml
+
+FlyingObject <|-- AbstractAircraft
+FlyingObject <|-- AbstractBullet
+FlyingObject <|-- AbstractProp
+
+AbstractAircraft <|-- EliteEnemy
+AbstractAircraft <|-- HeroAircraft
+AbstractAircraft <|-- MobEnemy
+
+AbstractBullet <|-- HeroBullet
+AbstractBullet <|-- EnemyBullet
+
+AbstractProp <|-- PropBlood
+AbstractProp <|-- PropBomb
+AbstractProp <|-- PropBullet
+
+
+abstract class FlyingObject
+{
+    # int locationX
+    # int locationY
+    # int speedX
+    # int speedY
+    # BufferedImage image
+    # int width
+    # int height
+    # boolean isValid
+
+    + FlyingObject():void
+    + FlyingObject(int locationX, int locationY, int speedX, int speedY):void
+    + forward():void
+    + crash(FlyingObject flyingObject):boolean
+    + setLocation(double locationX, double locationY):void
+    + getLocationX():int
+    + getLocationY():int
+    + getSpeedY():int
+    + getImage():BufferedImage
+    + getWidth():int
+    + getHeight():int
+    + notValid():boolean
+    + vanish():void
+}
+
+
+
+
+
+abstract class AbstractAircraft
+{
+    # String typeOfEnemy
+	# int maxHp
+    # int hp
+    + AbstractAircraft(int locationX, int locationY, int speedX, int speedY, int hp):void
+    + decreaseHp(int decrease):void
+    + getHp():int
+    + {abstract} shoot():List<AbstractBullet>
+    + getTypeOfEnemy():String
+}
+
+class EliteEnemy {
+    - int shootNum
+    - int power
+    - int direction
+    + EliteEnemy(int locationX, int locationY, int speedX, int speedY, int hp, String type):void
+    + forward():void
+    + shoot():List<Bullet>
+}
+
+class HeroAircraft {
+    - int shootNum
+    - int power
+    - int direction
+    + HeroAircraft(int locationX, int locationY, int speedX, int speedY, int hp):void
+    + forward():void
+    + shoot():List<Bullet>
+}
+
+class MobEnemy {
+    + MobEnemy(int locationX, int locationY, int speedX, int speedY, int hp):void
+    + forward():void
+    + shoot():List<Bullet>
+}
+
+
+
+
+
+abstract class AbstractBullet
+{
+    - int power
+    + AbstractBullet(int locationX, int locationY, int speedX, int speedY, int power):void
+    + forward():void
+	+ getPower():int
+}
+
+class HeroBullet {
+    + HeroBullet(int locationX, int locationY,
+     int speedX, int speedY, int power):void
+}
+
+class EnemyBullet {
+    + EnemyBullet(int locationX, int locationY,
+     int speedX, int speedY, int power):void
+}
+
+
+
+
+
+abstract class AbstractProp
+{
+    # String typeOfProp
+    + AbstractProp(int locationX, int locationY, int speedX, int speedY):void
+    + forward():void
+    + getTypeOfProp():String
+}
+
+class PropBlood {
+    + PropBlood(int locationX, int locationY, int speedX, int speedY, String type):void
+}
+
+class PropBomb {
+    + PropBomb(int locationX, int locationY, int speedX, int speedY, String type):void
+}
+
+class PropBullet {
+    + PropBullet(int locationX, int locationY, int speedX, int speedY, String type):void
+}
+
+@enduml

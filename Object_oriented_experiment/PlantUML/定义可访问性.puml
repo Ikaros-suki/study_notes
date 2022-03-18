@@ -1,0 +1,22 @@
+@startuml
+
+class Dummy {
+ -field1
+ #field2
+ ~method1()
+ +method2()
+}
+
+@enduml
+
+@startuml
+skinparam classAttributeIconSize 0 
+' 使用`skinparam classAttributeIconSize 0`显示符号原来的样子
+class Dummy {
+ -field1
+ #field2
+ ~method1()
+ +method2()
+}
+
+@enduml
