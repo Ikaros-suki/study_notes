@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch BRRead",
+            "request": "launch",
+            "mainClass": "BRRead",
+            "projectName": "Code_0402_ddd34b22"
+        },
+        {
+            "name": ".NET Core Attach",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
